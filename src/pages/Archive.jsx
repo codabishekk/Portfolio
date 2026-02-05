@@ -1,0 +1,119 @@
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+export default function Archive() {
+    const allProjects = [
+        {
+            title: "EVENT-MANGEMENT",
+            description: "A high-performance MERN architecture designed for massive scale of small business, man resource, part-time work platform for seamless communication.",
+            tech: ["React", "Express", "MongoDB", "Node.js"],
+            emoji: "💎",
+            category: "Enterprise"
+        },
+        {
+            title: "E-commerce",
+            description: "Real-time interactive shopping platform featuring secure checkouts, inventory management, and adaptive UI animations.",
+            tech: ["React", "Redux", "Node.js", "Stripe"],
+            emoji: "🎭",
+            category: "Fintech"
+        },
+        {
+            title: "tic tac toe",
+            description: "Advanced AI-powered game logic with move prediction and minimax algorithm implementation in a sleek responsive layout.",
+            tech: ["React", "Tailwind CSS", "Algorithm"],
+            emoji: "📊",
+            category: "Gaming/AI"
+        },
+        {
+            title: "stone paper scissor",
+            description: "Interactive hand game with logic-based AI opponent, featuring smooth transitions and custom win-streak mechanics.",
+            tech: ["React", "CSS3", "Logic Engine"],
+            emoji: "✊",
+            category: "Gaming"
+        },
+        {
+            title: "mood mailing",
+            description: "Sentiment analysis tool for email communication that suggests improvements based on detected tone and emotional impact.",
+            tech: ["NLP", "React", "Sentiment API"],
+            emoji: "�",
+            category: "Productivity"
+        },
+        {
+            title: "gif creators",
+            description: "High-performance video-to-GIF converter with custom frame selection, text overlays, and optimized compression.",
+            tech: ["FFmpeg.wasm", "React", "WebWorker"],
+            emoji: "🎬",
+            category: "Media Tool"
+        },
+        {
+            title: "planner visualizing",
+            description: "A visual task orchestration system that maps project timelines into interactive 3D graphs for better workflow insight.",
+            tech: ["Three.js", "React", "D3.js"],
+            emoji: "�",
+            category: "Visualization"
+        }
+    ];
+
+    return (
+        <section className="py-20 md:py-32 bg-mesh min-h-screen">
+            <div className="container">
+                <div className="mb-12 md:mb-16">
+                    <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group">
+                        <span className="group-hover:-translate-x-1 transition-transform">←</span> Back to Home
+                    </Link>
+                    <div className="flex items-center gap-4 mb-4">
+                        <div className="h-[2px] w-8 md:w-12 bg-violet-500"></div>
+                        <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-gray-500">Full Archive</span>
+                    </div>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6">Project <span className="text-gradient">Catalog.</span></h1>
+                    <p className="text-gray-400 max-w-xl text-base md:text-lg font-medium leading-relaxed">A comprehensive list of every digital creation and experiment.</p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+                    {allProjects.map((project, index) => (
+                        <motion.div
+                            key={project.title}
+                            className="group relative glass rounded-[30px] md:rounded-[40px] overflow-hidden transition-all duration-700 hover:-translate-y-4"
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                        >
+                            <div className="h-48 md:h-64 bg-violet-500/5 flex items-center justify-center group-hover:bg-violet-500/10 transition-all duration-700">
+                                <div className="text-5xl md:text-6xl group-hover:scale-125 transition-transform duration-700 grayscale group-hover:grayscale-0">
+                                    {project.emoji}
+                                </div>
+                            </div>
+
+                            <div className="p-6 md:p-10">
+                                <div className="flex justify-between items-start mb-6">
+                                    <div className="flex gap-2 flex-wrap max-w-[80%]">
+                                        {project.tech.map((t) => (
+                                            <span key={t} className="px-3 py-1 bg-white/[0.03] border border-white/[0.05] rounded-full text-[8px] font-bold text-gray-400 uppercase tracking-widest group-hover:border-violet-500/30 group-hover:text-violet-300 transition-all duration-500">
+                                                {t}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <span className="text-[8px] md:text-[9px] font-black uppercase text-violet-500/50 tracking-tighter shrink-0">{project.category}</span>
+                                </div>
+                                <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-violet-400 transition-colors tracking-tight uppercase truncate">{project.title}</h3>
+                                <p className="text-gray-500 text-xs md:text-sm leading-relaxed mb-8 md:mb-10 font-medium h-20 line-clamp-3">
+                                    {project.description}
+                                </p>
+                                <a href="/#contact" className="inline-flex items-center gap-3 font-semibold text-[10px] md:text-xs tracking-widest text-white/30 group-hover:text-white transition-all uppercase">
+                                    View Project <span className="text-lg group-hover:translate-x-2 transition-transform duration-500">→</span>
+                                </a>
+                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-violet-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        </motion.div>
+                    ))}
+                </div>
+                <div className="flex justify-center mt-12 md:mt-20">
+                    <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group text-sm">
+                        <span className="group-hover:-translate-x-1 transition-transform">←</span> Back to Home
+                    </Link>
+                </div>
+            </div>
+        </section>
+    );
+}
