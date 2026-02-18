@@ -34,7 +34,7 @@ export default function About() {
                             <span className="text-gradient">digital potential.</span>
                         </h2>
 
-                        <div className="space-y-8 text-gray-400 text-base md:text-lg leading-relaxed font-medium">
+                        <div className="space-y-8 text-gray-400 text-lg md:text-xl leading-relaxed font-medium">
                             <p>
                                 I am Abishek, a MERN stack developer dedicated to architecting high-end digital experiences.
                                 My approach combines technical precision with a relentless focus on aesthetics and user psychology.
@@ -47,13 +47,13 @@ export default function About() {
 
                         <div className="mt-16 flex flex-col sm:flex-row justify-center lg:justify-start gap-8 sm:gap-12">
                             <div>
-                                <h4 className="text-3xl md:text-4xl font-extrabold text-white mb-2">2+ years</h4>
-                                <p className="text-gray-500 text-[10px] font-bold uppercase tracking-[0.2em]">Learning & Growth</p>
+                                <h4 className="text-4xl md:text-5xl font-extrabold text-white mb-2">2+ years</h4>
+                                <p className="text-gray-500 text-[11px] font-bold uppercase tracking-[0.2em]">Learning & Growth</p>
                             </div>
                             <div className="hidden sm:block h-12 w-[1px] bg-white/10 self-center"></div>
                             <div>
-                                <h4 className="text-3xl md:text-4xl font-extrabold text-white mb-2">10+ PROJECTS</h4>
-                                <p className="text-gray-500 text-[10px] font-bold uppercase tracking-[0.2em]">Success Deliveries</p>
+                                <h4 className="text-4xl md:text-5xl font-extrabold text-white mb-2">10+ PROJECTS</h4>
+                                <p className="text-gray-500 text-[11px] font-bold uppercase tracking-[0.2em]">Success Deliveries</p>
                             </div>
                         </div>
                     </motion.div>
@@ -74,10 +74,10 @@ export default function About() {
                                         className="group p-4 md:p-5 bg-white/[0.02] border border-white/[0.05] rounded-2xl hover:bg-white/[0.05] hover:border-violet-500/30 transition-all duration-500"
                                     >
                                         <div className="flex justify-between items-start mb-2">
-                                            <span className="text-[10px] text-violet-400 font-bold uppercase tracking-widest">{skill.category}</span>
+                                            <span className="text-[11px] text-violet-400 font-bold uppercase tracking-widest">{skill.category}</span>
                                             <div className="h-1.5 w-1.5 rounded-full bg-violet-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                         </div>
-                                        <div className="text-base md:text-lg font-bold text-gray-200 group-hover:text-white transition-colors">
+                                        <div className="text-lg md:text-xl font-bold text-gray-200 group-hover:text-white transition-colors">
                                             {skill.name}
                                         </div>
                                     </div>

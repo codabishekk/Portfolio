@@ -20,16 +20,20 @@
     background-color: var(--background);
     color: var(--foreground);
     font-family: 'Inter', sans-serif;
+    font-size: 18px; /* Increased from default */
     @apply antialiased selection:bg-violet-500/30;
     overflow-x: hidden;
     width: 100%;
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+  h1 {
+    @apply text-6xl md:text-8xl;
+  }
+  h2 {
+    @apply text-4xl md:text-6xl;
+  }
+  h3 {
+    @apply text-2xl md:text-4xl;
   }
 }
 

@@ -29,7 +29,7 @@ export default function Hero() {
                     </motion.div>
 
                     <motion.h1 
-                        className="text-5xl sm:text-6xl md:text-8xl lg:text-[100px] font-extrabold mb-8 leading-[0.9] tracking-tight"
+                        className="text-6xl sm:text-7xl md:text-9xl lg:text-[120px] font-extrabold mb-8 leading-[0.9] tracking-tight"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -40,7 +40,7 @@ export default function Hero() {
                     </motion.h1>
 
                     <motion.p 
-                        className="text-gray-400 text-lg md:text-xl max-w-xl mx-auto md:mx-0 mb-12 leading-relaxed font-medium"
+                        className="text-gray-400 text-xl md:text-2xl max-w-2xl mx-auto md:mx-0 mb-12 leading-relaxed font-medium"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6, duration: 1 }}
@@ -54,10 +54,10 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.8, duration: 1 }}
                     >
-                        <a href="/#projects" className="px-8 md:px-10 py-4 md:py-5 bg-foreground text-background font-bold rounded-2xl hover:bg-violet-500 hover:text-white transition-all duration-500 premium-shadow text-sm md:text-base hover:-translate-y-1">
+                        <a href="/#projects" className="px-10 md:px-12 py-5 md:py-6 bg-foreground text-background font-bold rounded-2xl hover:bg-violet-500 hover:text-white transition-all duration-500 premium-shadow text-base md:text-lg hover:-translate-y-1">
                             SELECTED WORKS
                         </a>
-                        <a href="/#contact" className="px-8 md:px-10 py-4 md:py-5 glass hover:bg-white/[0.08] text-white font-bold rounded-2xl transition-all duration-500 text-sm md:text-base hover:-translate-y-1">
+                        <a href="/#contact" className="px-10 md:px-12 py-5 md:py-6 glass hover:bg-white/[0.08] text-white font-bold rounded-2xl transition-all duration-500 text-base md:text-lg hover:-translate-y-1">
                             GET IN TOUCH
                         </a>
                     </motion.div>

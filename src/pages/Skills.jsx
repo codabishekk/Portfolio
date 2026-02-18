@@ -95,11 +95,11 @@ export default function Skills() {
                 <div className="mb-12 md:mb-20 text-center">
                     <div className="flex items-center justify-center gap-4 mb-6">
                         <div className="h-[2px] w-8 md:w-12 bg-violet-500"></div>
-                        <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-gray-500">Expertise</span>
+                        <span className="text-[12px] md:text-sm font-bold uppercase tracking-[0.3em] text-gray-500">Expertise</span>
                         <div className="h-[2px] w-8 md:w-12 bg-violet-500"></div>
                     </div>
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 md:mb-8">Technical <span className="text-gradient">Arsenal.</span></h1>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-base md:text-lg font-medium leading-relaxed">
+                    <h1 className="text-5xl sm:text-6xl md:text-8xl font-extrabold mb-6 md:mb-8">Technical <span className="text-gradient">Arsenal.</span></h1>
+                    <p className="text-gray-400 max-w-3xl mx-auto text-lg md:text-xl font-medium leading-relaxed">
                         A comprehensive overview of my technical stack and the professional tools I use to bring digital ideas to life.
                     </p>
                 </div>
@@ -107,7 +107,7 @@ export default function Skills() {
                 <div className="space-y-16 md:space-y-24">
                     {skillCategories.map((category, catIndex) => (
                         <div key={category.title}>
-                            <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 flex items-center gap-4">
+                            <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 flex items-center gap-4">
                                 <span className="text-violet-500">#</span> {category.title}
                             </h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:grid-cols-2">
@@ -129,7 +129,7 @@ export default function Skills() {
                                                 )}
                                             </div>
                                         </div>
-                                        <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-violet-400 transition-colors uppercase tracking-tight">{skill.name}</h3>
+                                        <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-violet-400 transition-colors uppercase tracking-tight">{skill.name}</h3>
                                     </motion.div>
                                 ))}
                             </div>
@@ -138,12 +138,12 @@ export default function Skills() {
                 </div>
 
                 <div className="flex flex-col items-center gap-6 md:gap-8 mt-24 md:mt-32">
-                    <p className="text-gray-500 font-medium text-sm md:text-base">Want to discuss a project?</p>
+                    <p className="text-gray-500 font-medium text-lg md:text-xl">Want to discuss a project?</p>
                     <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full sm:w-auto items-center">
-                        <Link to="/" className="glass-light px-8 py-4 rounded-full text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-white/[0.05] transition-all text-center w-full max-w-[200px] sm:w-auto">
+                        <Link to="/" className="glass-light px-10 py-5 rounded-full text-[12px] md:text-[13px] font-bold uppercase tracking-[0.2em] hover:bg-white/[0.05] transition-all text-center w-full max-w-[200px] sm:w-auto">
                             Back to Home
                         </Link>
-                        <a href="/#contact" className="bg-violet-600 px-8 py-4 rounded-full text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-violet-700 transition-all shadow-[0_0_40px_rgba(124,58,237,0.3)] text-center w-full max-w-[200px] sm:w-auto">
+                        <a href="/#contact" className="bg-violet-600 px-10 py-5 rounded-full text-[12px] md:text-[13px] font-bold uppercase tracking-[0.2em] hover:bg-violet-700 transition-all shadow-[0_0_40px_rgba(124,58,237,0.3)] text-center w-full max-w-[200px] sm:w-auto">
                             Get In Touch
                         </a>
                     </div>

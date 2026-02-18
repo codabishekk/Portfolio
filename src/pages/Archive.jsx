@@ -77,15 +77,15 @@ export default function Archive() {
         <section className="py-20 md:py-32 bg-mesh min-h-screen">
             <div className="container">
                 <div className="mb-12 md:mb-16">
-                    <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group">
+                    <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group text-lg font-medium">
                         <span className="group-hover:-translate-x-1 transition-transform">←</span> Back to Home
                     </Link>
                     <div className="flex items-center gap-4 mb-4">
                         <div className="h-[2px] w-8 md:w-12 bg-violet-500"></div>
-                        <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-gray-500">Full Archive</span>
+                        <span className="text-[12px] md:text-sm font-bold uppercase tracking-[0.3em] text-gray-500">Full Archive</span>
                     </div>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6">Project <span className="text-gradient">Catalog.</span></h1>
-                    <p className="text-gray-400 max-w-xl text-base md:text-lg font-medium leading-relaxed">A comprehensive list of every digital creation and experiment.</p>
+                    <h1 className="text-5xl sm:text-6xl md:text-8xl font-extrabold mb-6">Project <span className="text-gradient">Catalog.</span></h1>
+                    <p className="text-gray-400 max-w-xl text-lg md:text-xl font-medium leading-relaxed">A comprehensive list of every digital creation and experiment.</p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
@@ -108,15 +108,15 @@ export default function Archive() {
                                 <div className="flex justify-between items-start mb-6">
                                     <div className="flex gap-2 flex-wrap max-w-[80%]">
                                         {project.tech.map((t) => (
-                                            <span key={t} className="px-3 py-1 bg-white/[0.03] border border-white/[0.05] rounded-full text-[8px] font-bold text-gray-400 uppercase tracking-widest group-hover:border-violet-500/30 group-hover:text-violet-300 transition-all duration-500">
+                                            <span key={t} className="px-3 py-1 bg-white/[0.03] border border-white/[0.05] rounded-full text-[11px] font-bold text-gray-400 uppercase tracking-widest group-hover:border-violet-500/30 group-hover:text-violet-300 transition-all duration-500">
                                                 {t}
                                             </span>
                                         ))}
                                     </div>
-                                    <span className="text-[8px] md:text-[9px] font-black uppercase text-violet-500/50 tracking-tighter shrink-0">{project.category}</span>
+                                    <span className="text-[10px] md:text-[11px] font-black uppercase text-violet-500/50 tracking-tighter shrink-0">{project.category}</span>
                                 </div>
-                                <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-violet-400 transition-colors tracking-tight uppercase truncate">{project.title}</h3>
-                                <p className="text-gray-500 text-xs md:text-sm leading-relaxed mb-8 md:mb-10 font-medium h-20 line-clamp-3">
+                                <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-violet-400 transition-colors tracking-tight uppercase truncate">{project.title}</h3>
+                                <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-8 md:mb-10 font-medium h-24 line-clamp-3">
                                     {project.description}
                                 </p>
                                 {project.link?.startsWith('http') ? (
@@ -124,14 +124,14 @@ export default function Archive() {
                                         href={project.link} 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
-                                        className="inline-flex items-center gap-3 font-semibold text-[10px] md:text-xs tracking-widest text-white/30 group-hover:text-white transition-all uppercase"
+                                        className="inline-flex items-center gap-3 font-semibold text-[12px] md:text-sm tracking-widest text-white/30 group-hover:text-white transition-all uppercase"
                                     >
                                         View Project <span className="text-lg group-hover:translate-x-2 transition-transform duration-500">→</span>
                                     </a>
                                 ) : (
                                     <Link 
                                         to={project.link || "/#contact"} 
-                                        className="inline-flex items-center gap-3 font-semibold text-[10px] md:text-xs tracking-widest text-white/30 group-hover:text-white transition-all uppercase"
+                                        className="inline-flex items-center gap-3 font-semibold text-[12px] md:text-sm tracking-widest text-white/30 group-hover:text-white transition-all uppercase"
                                     >
                                         View Project <span className="text-lg group-hover:translate-x-2 transition-transform duration-500">→</span>
                                     </Link>
@@ -142,7 +142,7 @@ export default function Archive() {
                     ))}
                 </div>
                 <div className="flex justify-center mt-12 md:mt-20">
-                    <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group text-sm">
+                    <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group text-lg font-medium">
                         <span className="group-hover:-translate-x-1 transition-transform">←</span> Back to Home
                     </Link>
                 </div>

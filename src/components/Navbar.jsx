@@ -21,12 +21,12 @@ export default function Navbar() {
         <nav className={`fixed top-0 w-full flex justify-between items-center px-6 md:px-12 z-50 transition-all duration-500 ${
             scrolled ? "py-4 glass border-b border-white/[0.05]" : "py-8 bg-transparent"
         }`}>
-            <Link to="/" className="text-2xl font-extrabold text-gradient tracking-tight hover:scale-105 transition-transform duration-300">
+            <Link to="/" className="text-3xl font-extrabold text-gradient tracking-tight hover:scale-105 transition-transform duration-300">
                 ABISHEKK.C
             </Link>
             
             {/* Desktop Menu */}
-            <div className="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em]">
+            <div className="hidden md:flex gap-10 text-[13px] font-bold uppercase tracking-[0.2em]">
                 {navItems.map((item) => (
                     <a
                         key={item}
@@ -43,7 +43,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Toggle */}
             <button 
-                className="md:hidden text-2xl text-white p-2 glass rounded-xl"
+                className="md:hidden text-3xl text-white p-3 glass rounded-xl"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label="Toggle menu"
             >
@@ -63,7 +63,7 @@ export default function Navbar() {
                         <a
                             key={item}
                             href={item === "Home" ? "/#" : `/#${item.toLowerCase()}`}
-                            className="text-3xl font-bold uppercase tracking-[0.2em] text-gray-400 hover:text-violet-500 transition-colors"
+                            className="text-4xl font-bold uppercase tracking-[0.2em] text-gray-400 hover:text-violet-500 transition-colors"
                             style={{ animationDelay: `${index * 0.1}s` }}
                             onClick={() => setIsOpen(false)}
                         >

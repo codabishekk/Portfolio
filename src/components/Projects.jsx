@@ -39,7 +39,7 @@ export default function Projects() {
                         <p className="text-gray-400 max-w-xl text-base md:text-lg font-medium leading-relaxed mx-auto md:mx-0">A curated collection of digital solutions where form perfectly follows function.</p>
                     </div>
                     <div className="w-full md:w-auto flex justify-center">
-                        <Link to="/archive" className="glass-light px-8 py-4 rounded-full text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-white/[0.05] transition-all whitespace-nowrap">
+                        <Link to="/archive" className="glass-light px-10 py-5 rounded-full text-[12px] md:text-[13px] font-bold uppercase tracking-[0.2em] hover:bg-white/[0.05] transition-all whitespace-nowrap">
                             Browse Full Archive ↗
                         </Link>
                     </div>
@@ -64,13 +64,13 @@ export default function Projects() {
                             <div className="p-6 md:p-10">
                                 <div className="flex gap-2 mb-6 flex-wrap">
                                     {project.tech.map((t) => (
-                                        <span key={t} className="px-3 md:px-4 py-1.5 bg-white/[0.03] border border-white/[0.05] rounded-full text-[8px] md:text-[9px] font-bold text-gray-400 uppercase tracking-widest group-hover:border-violet-500/30 group-hover:text-violet-300 transition-all duration-500">
+                                        <span key={t} className="px-3 md:px-4 py-1.5 bg-white/[0.03] border border-white/[0.05] rounded-full text-[11px] md:text-[12px] font-bold text-gray-400 uppercase tracking-widest group-hover:border-violet-500/30 group-hover:text-violet-300 transition-all duration-500">
                                             {t}
                                         </span>
                                     ))}
                                 </div>
-                                <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-violet-400 transition-colors tracking-tight uppercase truncate">{project.title}</h3>
-                                <p className="text-gray-500 text-xs md:text-sm leading-relaxed mb-8 md:mb-10 font-medium">
+                                <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-violet-400 transition-colors tracking-tight uppercase truncate">{project.title}</h3>
+                                <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-8 md:mb-10 font-medium">
                                     {project.description}
                                 </p>
                                 {project.link.startsWith('http') ? (
@@ -78,12 +78,12 @@ export default function Projects() {
                                         href={project.link} 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
-                                        className="inline-flex items-center gap-3 font-semibold text-[10px] md:text-xs tracking-widest text-white/50 group-hover:text-white transition-all uppercase"
+                                        className="inline-flex items-center gap-3 font-semibold text-[12px] md:text-sm tracking-widest text-white/50 group-hover:text-white transition-all uppercase"
                                     >
                                         Explore Project <span className="text-lg group-hover:translate-x-2 transition-transform duration-500">→</span>
                                     </a>
                                 ) : (
-                                    <Link to={project.link} className="inline-flex items-center gap-3 font-semibold text-[10px] md:text-xs tracking-widest text-white/50 group-hover:text-white transition-all uppercase">
+                                    <Link to={project.link} className="inline-flex items-center gap-3 font-semibold text-[12px] md:text-sm tracking-widest text-white/50 group-hover:text-white transition-all uppercase">
                                         Explore Project <span className="text-lg group-hover:translate-x-2 transition-transform duration-500">→</span>
                                     </Link>
                                 )}
