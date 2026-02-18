@@ -7,19 +7,22 @@ export default function Projects() {
             title: "EVENT-MANGEMENT",
             description: "A high-performance MERN architecture designed for massive scale of samll business, man resource, parti-time work both company and employee platform in online and seamless communication job opperunities.",
             tech: ["React", "Express", "MongoDB", "JavaScript"],
-            emoji: "💎"
+            emoji: "💎",
+            link: "https://event-management-1-rs9y.onrender.com"
         },
         {
             title: "E-commerce",
             description: "Real-time interactive platform featuring low-latency communication and adaptive UI.",
             tech: ["React", "Node.js", "MongoDB", "JavaScript"],
-            emoji: "🎭"
+            emoji: "🎭",
+            link: "/archive"
         },
         {
             title: "tic tac toe",
             description: "Advanced Ai model for real-time game analytics and move prediction play with AI in responsive design.",
             tech: ["React(vite)", "TailWind CSS", "Claude", "OpenRouterAPI"],
-            emoji: "📊"
+            emoji: "📊",
+            link: "/archive"
         }
     ];
 
@@ -70,9 +73,21 @@ export default function Projects() {
                                 <p className="text-gray-500 text-xs md:text-sm leading-relaxed mb-8 md:mb-10 font-medium">
                                     {project.description}
                                 </p>
-                                <Link to="/archive" className="inline-flex items-center gap-3 font-semibold text-[10px] md:text-xs tracking-widest text-white/50 group-hover:text-white transition-all uppercase">
-                                    Explore Project <span className="text-lg group-hover:translate-x-2 transition-transform duration-500">→</span>
-                                </Link>
+                                {project.link.startsWith('http') ? (
+                                    <a 
+                                        href={project.link} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="inline-flex items-center gap-3 font-semibold text-[10px] md:text-xs tracking-widest text-white/50 group-hover:text-white transition-all uppercase"
+                                    >
+                                        Explore Project <span className="text-lg group-hover:translate-x-2 transition-transform duration-500">→</span>
+                                    </a>
+                                ) : (
+                                    <Link to={project.link} className="inline-flex items-center gap-3 font-semibold text-[10px] md:text-xs tracking-widest text-white/50 group-hover:text-white transition-all uppercase">
+                                        Explore Project <span className="text-lg group-hover:translate-x-2 transition-transform duration-500">→</span>
+                                    </Link>
+                                )}
+
                             </div>
 
                             {/* Refined hover state logic */}

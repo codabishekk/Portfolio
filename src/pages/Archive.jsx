@@ -22,35 +22,52 @@ export default function Archive() {
             description: "Advanced AI-powered game logic with move prediction and minimax algorithm implementation in a sleek responsive layout.",
             tech: ["React", "Tailwind CSS", "Algorithm"],
             emoji: "📊",
-            category: "Gaming/AI"
+            category: "Gaming/AI",
+            link:"https://tic-tac-tai.netlify.app"
         },
         {
-            title: "stone paper scissor",
-            description: "Interactive hand game with logic-based AI opponent, featuring smooth transitions and custom win-streak mechanics.",
+            title: "dm-delay",
+            description: "DM-Delay is a React-based web application designed to manage, track, and visualize delay-related data through an interactive and user-friendly dashboard.",
             tech: ["React", "CSS3", "Logic Engine"],
             emoji: "✊",
-            category: "Gaming"
+            category: "communication",
+            link:"https://dm-delay.netlify.app"
         },
         {
             title: "mood mailing",
             description: "Sentiment analysis tool for email communication that suggests improvements based on detected tone and emotional impact.",
             tech: ["NLP", "React", "Sentiment API"],
-            emoji: "�",
-            category: "Productivity"
+            category: "Productivity",
+            link:"https://mood-mailing.netlify.app"
         },
         {
-            title: "gif creators",
-            description: "High-performance video-to-GIF converter with custom frame selection, text overlays, and optimized compression.",
-            tech: ["FFmpeg.wasm", "React", "WebWorker"],
-            emoji: "🎬",
-            category: "Media Tool"
+            title: "checkList",
+            description: "A simple and responsive task management application built with React for managing everyday activities.",
+            tech: ["HTML5", "React", "CSS3","usestate"],
+            category: "Productivity",
+            link:"https://simple-todo-n6hg.vercel.app"
+        },
+        {
+            title: "Restaurant_app",
+            description: "Sentiment analysis tool for email communication that suggests improvements based on detected tone and emotional impact.",
+            tech: ["HTML5", "React", "CSS3","javascript", "restAPI",""],
+            category: "Productivity",
+            link:"https://enhancement-restaurant-app-7gni.vercel.app"
+        },
+         {
+            title: "job_portal",
+            description: "Developed a Job Portal application using React that enables users to browse jobs, submit applications, and track their application status efficiently.",
+            tech: ["HTML5", "React", "CSS3","javascript", "restAPI",""],
+            category: "Productivity",
+            link:"https://enhancement-of-jobby-app-peach.vercel.app"
         },
         {
             title: "planner visualizing",
             description: "A visual task orchestration system that maps project timelines into interactive 3D graphs for better workflow insight.",
             tech: ["Three.js", "React", "D3.js"],
             emoji: "�",
-            category: "Visualization"
+            category: "Visualization",
+            link:"https://time-tracke.netlify.app"
         }
     ];
 
