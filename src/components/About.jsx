@@ -31,7 +31,7 @@ export default function About() {
 
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-10 leading-[1.1]">
                             Pushing the boundaries of <br className="hidden md:block" />
-                            <span className="text-violet-500">digital potential.</span>
+                            <span className="text-gradient">digital potential.</span>
                         </h2>
 
                         <div className="space-y-8 text-gray-400 text-base md:text-lg leading-relaxed font-medium">

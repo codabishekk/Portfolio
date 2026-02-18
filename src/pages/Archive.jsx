@@ -8,14 +8,16 @@ export default function Archive() {
             description: "A high-performance MERN architecture designed for massive scale of small business, man resource, part-time work platform for seamless communication.",
             tech: ["React", "Express", "MongoDB", "Node.js"],
             emoji: "💎",
-            category: "Enterprise"
+            category: "Enterprise",
+            link: "https://event-management-1-rs9y.onrender.com"
         },
         {
             title: "E-commerce",
             description: "Real-time interactive shopping platform featuring secure checkouts, inventory management, and adaptive UI animations.",
             tech: ["React", "Redux", "Node.js", "Stripe"],
             emoji: "🎭",
-            category: "Fintech"
+            category: "Fintech",
+            link: "https://glazzium.netlify.app"
         },
         {
             title: "tic tac toe",
@@ -49,7 +51,7 @@ export default function Archive() {
         },
         {
             title: "Restaurant_app",
-            description: "Sentiment analysis tool for email communication that suggests improvements based on detected tone and emotional impact.",
+            description: "A premium dining platform featuring dynamic menu selection, real-time table reservations, and seamless order management.",
             tech: ["HTML5", "React", "CSS3","javascript", "restAPI",""],
             category: "Productivity",
             link:"https://enhancement-restaurant-app-7gni.vercel.app"
@@ -117,11 +119,25 @@ export default function Archive() {
                                 <p className="text-gray-500 text-xs md:text-sm leading-relaxed mb-8 md:mb-10 font-medium h-20 line-clamp-3">
                                     {project.description}
                                 </p>
-                                <a href="/#contact" className="inline-flex items-center gap-3 font-semibold text-[10px] md:text-xs tracking-widest text-white/30 group-hover:text-white transition-all uppercase">
-                                    View Project <span className="text-lg group-hover:translate-x-2 transition-transform duration-500">→</span>
-                                </a>
+                                {project.link?.startsWith('http') ? (
+                                    <a 
+                                        href={project.link} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="inline-flex items-center gap-3 font-semibold text-[10px] md:text-xs tracking-widest text-white/30 group-hover:text-white transition-all uppercase"
+                                    >
+                                        View Project <span className="text-lg group-hover:translate-x-2 transition-transform duration-500">→</span>
+                                    </a>
+                                ) : (
+                                    <Link 
+                                        to={project.link || "/#contact"} 
+                                        className="inline-flex items-center gap-3 font-semibold text-[10px] md:text-xs tracking-widest text-white/30 group-hover:text-white transition-all uppercase"
+                                    >
+                                        View Project <span className="text-lg group-hover:translate-x-2 transition-transform duration-500">→</span>
+                                    </Link>
+                                )}
                             </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-violet-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-violet-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                         </motion.div>
                     ))}
                 </div>

@@ -19,7 +19,7 @@ export default function Hero() {
                         className="inline-flex items-center gap-3 px-4 py-2 glass-light rounded-full mb-8"
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.3 }}
+                        transition={{ delay: 0.3, duration: 0.8 }}
                     >
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
@@ -28,24 +28,39 @@ export default function Hero() {
                         <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-violet-300">Available for Projects</span>
                     </motion.div>
 
-                    <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[100px] font-extrabold mb-8 leading-[0.9] tracking-tight">
+                    <motion.h1 
+                        className="text-5xl sm:text-6xl md:text-8xl lg:text-[100px] font-extrabold mb-8 leading-[0.9] tracking-tight"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                    >
                         Crafting <br />
-                        <span className="text-gradient">Digital</span> <br />
+                        <span className="text-gradient text-glow">Digital</span> <br />
                         Excellence.
-                    </h1>
+                    </motion.h1>
 
-                    <p className="text-gray-400 text-lg md:text-xl max-w-xl mx-auto md:mx-0 mb-12 leading-relaxed font-medium">
+                    <motion.p 
+                        className="text-gray-400 text-lg md:text-xl max-w-xl mx-auto md:mx-0 mb-12 leading-relaxed font-medium"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6, duration: 1 }}
+                    >
                         I am a full-stack engineer and designer specialized in creating premium, high-performance web applications that make an impact.
-                    </p>
+                    </motion.p>
 
-                    <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 mt-12 mb-5">
-                        <a href="/#projects" className="px-8 md:px-10 py-4 md:py-5 bg-foreground text-background font-bold rounded-2xl hover:bg-violet-500 hover:text-white transition-all duration-500 premium-shadow text-sm md:text-base">
+                    <motion.div 
+                        className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 mt-12 mb-5"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.8, duration: 1 }}
+                    >
+                        <a href="/#projects" className="px-8 md:px-10 py-4 md:py-5 bg-foreground text-background font-bold rounded-2xl hover:bg-violet-500 hover:text-white transition-all duration-500 premium-shadow text-sm md:text-base hover:-translate-y-1">
                             SELECTED WORKS
                         </a>
-                        <a href="/#contact" className="px-8 md:px-10 py-4 md:py-5 glass hover:bg-white/[0.08] text-white font-bold rounded-2xl transition-all duration-500 text-sm md:text-base">
+                        <a href="/#contact" className="px-8 md:px-10 py-4 md:py-5 glass hover:bg-white/[0.08] text-white font-bold rounded-2xl transition-all duration-500 text-sm md:text-base hover:-translate-y-1">
                             GET IN TOUCH
                         </a>
-                    </div>
+                    </motion.div>
                 </motion.div>
 
                 {/* Profile Photo as a Floating Element */}
@@ -53,14 +68,14 @@ export default function Hero() {
                     className="flex-1 flex justify-center relative order-1 md:order-2"
                     initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
                 >
                     <div className="relative group p-3 md:p-4 border border-white/[0.05] rounded-[30px] md:rounded-[40px] glass-light">
-                        <div className="absolute -inset-2 bg-gradient-to-br from-violet-500/20 to-blue-500/20 rounded-[35px] md:rounded-[45px] blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+                        <div className="absolute -inset-4 bg-gradient-to-br from-violet-500/20 to-blue-500/20 rounded-[35px] md:rounded-[45px] blur-3xl opacity-50 group-hover:opacity-80 transition duration-1000"></div>
                         <img
                             src={heroBg}
                             alt="Abishekk"
-                            className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-[350px] md:h-[350px] lg:w-[450px] lg:h-[450px] rounded-[24px] md:rounded-[32px] object-cover shadow-2xl transition-all duration-700"
+                            className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-[350px] md:h-[350px] lg:w-[450px] lg:h-[450px] rounded-[24px] md:rounded-[32px] object-cover shadow-2xl transition-all duration-700 group-hover:scale-[1.02]"
                         />
                     </div>
                 </motion.div>

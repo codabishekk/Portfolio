@@ -22,7 +22,7 @@ export default function Projects() {
             description: "Advanced Ai model for real-time game analytics and move prediction play with AI in responsive design.",
             tech: ["React(vite)", "TailWind CSS", "Claude", "OpenRouterAPI"],
             emoji: "📊",
-            link: "/archive"
+            link: "https://tic-tac-tai.netlify.app"
         }
     ];
 
@@ -91,7 +91,7 @@ export default function Projects() {
                             </div>
 
                             {/* Refined hover state logic */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-violet-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-violet-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                         </motion.div>
                     ))}
                 </div>

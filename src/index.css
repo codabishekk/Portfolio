@@ -56,16 +56,26 @@
       radial-gradient(at 0% 0%, hsla(270, 70%, 15%, 0.4) 0, transparent 50%),
       radial-gradient(at 100% 100%, hsla(220, 70%, 15%, 0.3) 0, transparent 50%),
       radial-gradient(at 50% 50%, hsla(280, 50%, 10%, 0.2) 0, transparent 50%);
+    background-attachment: fixed;
   }
 
   .premium-shadow {
     box-shadow: 0 0 40px -10px rgba(139, 92, 246, 0.2);
   }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+
+  @keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -73,8 +83,9 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 ::-webkit-scrollbar-thumb:hover {
