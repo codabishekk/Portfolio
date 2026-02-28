@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Contact from "../components/Contact";
 
 export default function Archive() {
     const allProjects = [
@@ -147,6 +148,7 @@ export default function Archive() {
                     </Link>
                 </div>
             </div>
+            <Contact />
         </section>
     );
 }

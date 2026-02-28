@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Contact from "../components/Contact";
 
 export default function Skills() {
     const skillCategories = [
@@ -149,6 +150,7 @@ export default function Skills() {
                     </div>
                 </div>
             </div>
+            <Contact />
         </section>
     );
 }
