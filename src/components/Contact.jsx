@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaFileDownload } from "react-icons/fa";
+import resumeFile from "../assets/Professional Resume (2).pdf";
 
 export default function Contact() {
     return (
@@ -62,8 +63,8 @@ export default function Contact() {
                                 </div>
                                 <div className="pt-6">
                                     <a 
-                                        href="/resume.pdf" 
-                                        download 
+                                        href={resumeFile} 
+                                        download="Professional Resume (2).pdf" 
                                         className="group/resume relative inline-flex items-center gap-4 px-8 py-4 bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-violet-500/50 transition-all duration-500"
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-r from-violet-600/20 to-indigo-600/20 translate-x-[-100%] group-hover/resume:translate-x-0 transition-transform duration-500"></div>

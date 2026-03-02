@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Contact from "../components/Contact";
 
 export default function Skills() {
     const skillCategories = [
@@ -144,13 +143,9 @@ export default function Skills() {
                         <Link to="/" className="glass-light px-10 py-5 rounded-full text-[12px] md:text-[13px] font-bold uppercase tracking-[0.2em] hover:bg-white/[0.05] transition-all text-center w-full max-w-[200px] sm:w-auto">
                             Back to Home
                         </Link>
-                        <a href="/#contact" className="bg-violet-600 px-10 py-5 rounded-full text-[12px] md:text-[13px] font-bold uppercase tracking-[0.2em] hover:bg-violet-700 transition-all shadow-[0_0_40px_rgba(124,58,237,0.3)] text-center w-full max-w-[200px] sm:w-auto">
-                            Get In Touch
-                        </a>
                     </div>
                 </div>
             </div>
-            <Contact />
         </section>
     );
 }

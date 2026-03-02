@@ -1,6 +1,16 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Contact from "../components/Contact";
+
+// Project Preview Images
+import moodMailingImg from "../assets/mood mailing (1).png";
+import plannerImg from "../assets/planer.png";
+import dmDelayImg from "../assets/dm_delay.png";
+import ticTacToeImg from "../assets/tic tac toe.png";
+import nxt_trends  from "../assets/nxt_trends.png";
+import Checklist from "../assets/todo_list.png";
+import Restaurant from "../assets/restaurant_app.png";
+import job from "../assets/job_app.png";
+import event from "../assets/event_management.png";
 
 export default function Archive() {
     const allProjects = [
@@ -8,15 +18,15 @@ export default function Archive() {
             title: "EVENT-MANGEMENT",
             description: "A high-performance MERN architecture designed for massive scale of small business, man resource, part-time work platform for seamless communication.",
             tech: ["React", "Express", "MongoDB", "Node.js"],
-            emoji: "💎",
             category: "Enterprise",
+            image: event,
             link: "https://event-management-1-rs9y.onrender.com"
         },
         {
             title: "E-commerce",
             description: "Real-time interactive shopping platform featuring secure checkouts, inventory management, and adaptive UI animations.",
             tech: ["React", "Redux", "Node.js", "Stripe"],
-            emoji: "🎭",
+            image:nxt_trends ,
             category: "Fintech",
             link: "https://glazzium.netlify.app"
         },
@@ -24,7 +34,7 @@ export default function Archive() {
             title: "tic tac toe",
             description: "Advanced AI-powered game logic with move prediction and minimax algorithm implementation in a sleek responsive layout.",
             tech: ["React", "Tailwind CSS", "Algorithm"],
-            emoji: "📊",
+            image: ticTacToeImg,
             category: "Gaming/AI",
             link:"https://tic-tac-tai.netlify.app"
         },
@@ -32,7 +42,7 @@ export default function Archive() {
             title: "dm-delay",
             description: "DM-Delay is a React-based web application designed to manage, track, and visualize delay-related data through an interactive and user-friendly dashboard.",
             tech: ["React", "CSS3", "Logic Engine"],
-            emoji: "✊",
+            image: dmDelayImg,
             category: "communication",
             link:"https://dm-delay.netlify.app"
         },
@@ -40,6 +50,7 @@ export default function Archive() {
             title: "mood mailing",
             description: "Sentiment analysis tool for email communication that suggests improvements based on detected tone and emotional impact.",
             tech: ["NLP", "React", "Sentiment API"],
+            image: moodMailingImg,
             category: "Productivity",
             link:"https://mood-mailing.netlify.app"
         },
@@ -48,6 +59,7 @@ export default function Archive() {
             description: "A simple and responsive task management application built with React for managing everyday activities.",
             tech: ["HTML5", "React", "CSS3","usestate"],
             category: "Productivity",
+            image: Checklist,
             link:"https://simple-todo-n6hg.vercel.app"
         },
         {
@@ -55,6 +67,7 @@ export default function Archive() {
             description: "A premium dining platform featuring dynamic menu selection, real-time table reservations, and seamless order management.",
             tech: ["HTML5", "React", "CSS3","javascript", "restAPI",""],
             category: "Productivity",
+            image: Restaurant,
             link:"https://enhancement-restaurant-app-7gni.vercel.app"
         },
          {
@@ -62,13 +75,14 @@ export default function Archive() {
             description: "Developed a Job Portal application using React that enables users to browse jobs, submit applications, and track their application status efficiently.",
             tech: ["HTML5", "React", "CSS3","javascript", "restAPI",""],
             category: "Productivity",
+            image:job,
             link:"https://enhancement-of-jobby-app-peach.vercel.app"
         },
         {
             title: "planner visualizing",
             description: "A visual task orchestration system that maps project timelines into interactive 3D graphs for better workflow insight.",
             tech: ["Three.js", "React", "D3.js"],
-            emoji: "�",
+            image: plannerImg,
             category: "Visualization",
             link:"https://time-tracke.netlify.app"
         }
@@ -99,10 +113,14 @@ export default function Archive() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         >
-                            <div className="h-48 md:h-64 bg-violet-500/5 flex items-center justify-center group-hover:bg-violet-500/10 transition-all duration-700">
-                                <div className="text-5xl md:text-6xl group-hover:scale-125 transition-transform duration-700 grayscale group-hover:grayscale-0">
-                                    {project.emoji}
-                                </div>
+                            <div className="h-48 md:h-64 bg-violet-500/5 flex items-center justify-center group-hover:bg-violet-500/10 transition-all duration-700 overflow-hidden">
+                                {project.image ? (
+                                    <img src={project.image} alt={project.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 opacity-80 group-hover:opacity-100" />
+                                ) : (
+                                    <div className="text-5xl md:text-6xl group-hover:scale-125 transition-transform duration-700 grayscale group-hover:grayscale-0">
+                                        {project.emoji}
+                                    </div>
+                                )}
                             </div>
 
                             <div className="p-6 md:p-10">
@@ -148,7 +166,6 @@ export default function Archive() {
                     </Link>
                 </div>
             </div>
-            <Contact />
         </section>
     );
 }

@@ -1,27 +1,31 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
+import event from "../assets/event_management.png";
+import ticTacToeImg from "../assets/tic tac toe.png";
+import nxt_trends  from "../assets/nxt_trends.png";
+
 export default function Projects() {
     const projects = [
         {
             title: "EVENT-MANGEMENT",
             description: "A high-performance MERN architecture designed for massive scale of samll business, man resource, parti-time work both company and employee platform in online and seamless communication job opperunities.",
             tech: ["React", "Express", "MongoDB", "JavaScript"],
-            emoji: "💎",
+            image:event,
             link: "https://event-management-1-rs9y.onrender.com"
         },
         {
             title: "E-commerce",
             description: "Real-time interactive platform featuring low-latency communication and adaptive UI.",
             tech: ["React", "Node.js", "MongoDB", "JavaScript"],
-            emoji: "🎭",
+            image:nxt_trends,
             link: "/archive"
         },
         {
             title: "tic tac toe",
             description: "Advanced Ai model for real-time game analytics and move prediction play with AI in responsive design.",
             tech: ["React(vite)", "TailWind CSS", "Claude", "OpenRouterAPI"],
-            emoji: "📊",
+            image:ticTacToeImg,
             link: "https://tic-tac-tai.netlify.app"
         }
     ];
