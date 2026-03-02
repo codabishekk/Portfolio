@@ -11,21 +11,21 @@ export default function Projects() {
             title: "EVENT-MANGEMENT",
             description: "A high-performance MERN architecture designed for massive scale of samll business, man resource, parti-time work both company and employee platform in online and seamless communication job opperunities.",
             tech: ["React", "Express", "MongoDB", "JavaScript"],
-            image:event,
+            image: event,
             link: "https://event-management-1-rs9y.onrender.com"
         },
         {
             title: "E-commerce",
             description: "Real-time interactive platform featuring low-latency communication and adaptive UI.",
             tech: ["React", "Node.js", "MongoDB", "JavaScript"],
-            image:nxt_trends,
+            image: nxt_trends,
             link: "/archive"
         },
         {
             title: "tic tac toe",
             description: "Advanced Ai model for real-time game analytics and move prediction play with AI in responsive design.",
             tech: ["React(vite)", "TailWind CSS", "Claude", "OpenRouterAPI"],
-            image:ticTacToeImg,
+            image: ticTacToeImg,
             link: "https://tic-tac-tai.netlify.app"
         }
     ];
@@ -59,10 +59,18 @@ export default function Projects() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         >
-                            <div className="h-48 md:h-64 bg-violet-500/5 flex items-center justify-center group-hover:bg-violet-500/10 transition-all duration-700">
-                                <div className="text-5xl md:text-6xl group-hover:scale-125 transition-transform duration-700 grayscale group-hover:grayscale-0">
-                                    {project.emoji}
-                                </div>
+                            <div className="h-48 md:h-64 bg-violet-500/5 flex items-center justify-center group-hover:bg-violet-500/10 transition-all duration-700 overflow-hidden">
+                                {project.image ? (
+                                    <img 
+                                        src={project.image} 
+                                        alt={project.title} 
+                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 opacity-80 group-hover:opacity-100" 
+                                    />
+                                ) : (
+                                    <div className="text-5xl md:text-6xl group-hover:scale-125 transition-transform duration-700 grayscale group-hover:grayscale-0">
+                                        {project.emoji || "🚀"}
+                                    </div>
+                                )}
                             </div>
 
                             <div className="p-6 md:p-10">
