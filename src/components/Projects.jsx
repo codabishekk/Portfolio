@@ -15,11 +15,12 @@ export default function Projects() {
             link: "https://event-management-1-rs9y.onrender.com"
         },
         {
-            title: "E-commerce",
-            description: "Real-time interactive platform featuring low-latency communication and adaptive UI.",
-            tech: ["React", "Node.js", "MongoDB", "JavaScript"],
-            image: nxt_trends,
-            link: "/archive"
+            title: "job_portal",
+            description: "Developed a Job Portal application using React that enables users to browse jobs, submit applications, and track their application status efficiently.",
+            tech: ["HTML5", "React", "CSS3","javascript", "restAPI",""],
+            category: "Productivity",
+            image:job,
+            link:"https://enhancement-of-jobby-app-peach.vercel.app"
         },
         {
             title: "tic tac toe",

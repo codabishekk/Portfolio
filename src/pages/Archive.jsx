@@ -23,12 +23,12 @@ export default function Archive() {
             link: "https://event-management-1-rs9y.onrender.com"
         },
         {
-            title: "E-commerce",
-            description: "Real-time interactive shopping platform featuring secure checkouts, inventory management, and adaptive UI animations.",
-            tech: ["React", "Redux", "Node.js", "Stripe"],
-            image:nxt_trends ,
-            category: "Fintech",
-            link: "https://glazzium.netlify.app"
+            title: "job_portal",
+            description: "Developed a Job Portal application using React that enables users to browse jobs, submit applications, and track their application status efficiently.",
+            tech: ["HTML5", "React", "CSS3","javascript", "restAPI",""],
+            category: "Productivity",
+            image:job,
+            link:"https://enhancement-of-jobby-app-peach.vercel.app"
         },
         {
             title: "tic tac toe",
@@ -71,12 +71,12 @@ export default function Archive() {
             link:"https://enhancement-restaurant-app-7gni.vercel.app"
         },
          {
-            title: "job_portal",
-            description: "Developed a Job Portal application using React that enables users to browse jobs, submit applications, and track their application status efficiently.",
-            tech: ["HTML5", "React", "CSS3","javascript", "restAPI",""],
-            category: "Productivity",
-            image:job,
-            link:"https://enhancement-of-jobby-app-peach.vercel.app"
+           title: "E-commerce",
+            description: "Real-time interactive shopping platform featuring secure checkouts, inventory management, and adaptive UI animations.",
+            tech: ["React", "Redux", "Node.js", "Stripe"],
+            image:nxt_trends ,
+            category: "Fintech",
+            link: "https://glazzium.netlify.app"
         },
         {
             title: "planner visualizing",
