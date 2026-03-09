@@ -91,8 +91,7 @@ export default function Projects() {
                                         href={project.link} 
                                         target="_blank" 
                                         rel="noopener noreferrer" 
-                                        className="inline-flex items-center gap-3 font-semibold text-[12px] md:text-sm tracking-widest text-white/50 group-hover:text-white transition-all uppercase"
-                                    >
+                                        className="inline-flex items-center gap-3 font-semibold text-[12px] md:text-sm tracking-widest text-white/50 group-hover:text-white transition-all uppercase">
                                         Explore Project <span className="text-lg group-hover:translate-x-2 transition-transform duration-500">→</span>
                                     </a>
                                 ) : (
