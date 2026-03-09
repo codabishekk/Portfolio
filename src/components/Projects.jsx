@@ -17,7 +17,7 @@ export default function Projects() {
         {
             title: "job_portal",
             description: "Developed a Job Portal application using React that enables users to browse jobs, submit applications, and track their application status efficiently.",
-            tech: ["HTML5", "React", "CSS3","javascript", "restAPI",""],
+            tech: ["HTML5", "React", "CSS3","javascript", "restAPI"],
             category: "Productivity",
             image:job,
             link:"https://enhancement-of-jobby-app-peach.vercel.app"
