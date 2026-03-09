@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import event from "../assets/event_management.png";
 import ticTacToeImg from "../assets/tic tac toe.png";
-import nxt_trends  from "../assets/nxt_trends.png";
+import job from "../assets/job_app.png";
 
 export default function Projects() {
     const projects = [
@@ -111,5 +111,6 @@ export default function Projects() {
         </section>
     );
 }
+
 
 
