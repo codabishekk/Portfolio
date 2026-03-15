@@ -104,21 +104,47 @@ export default function Skills() {
                     </p>
                 </div>
 
-                <div className="space-y-16 md:space-y-24">
+                <motion.div 
+                    className="space-y-16 md:space-y-24"
+                    variants={{
+                        hidden: { opacity: 0 },
+                        show: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.2
+                            }
+                        }
+                    }}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                >
                     {skillCategories.map((category, catIndex) => (
-                        <div key={category.title}>
+                        <motion.div 
+                            key={category.title}
+                            variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0 } }}
+                        >
                             <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 flex items-center gap-4">
                                 <span className="text-violet-500">#</span> {category.title}
                             </h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:grid-cols-2">
+                            <motion.div 
+                                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:grid-cols-2"
+                                variants={{
+                                    hidden: { opacity: 0 },
+                                    show: {
+                                        opacity: 1,
+                                        transition: {
+                                            staggerChildren: 0.05
+                                        }
+                                    }
+                                }}
+                            >
                                 {category.skills.map((skill, index) => (
                                     <motion.div
                                         key={skill.name}
                                         className="glass p-6 md:p-8 rounded-[24px] md:rounded-[32px] hover:-translate-y-2 transition-all duration-500 border border-white/[0.05] hover:border-violet-500/30 group"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: (catIndex * 3 + index) * 0.05, duration: 0.8 }}
+                                        variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
+                                        transition={{ duration: 0.8 }}
                                     >
                                         <div className="flex justify-between items-start mb-4 md:mb-6">
                                             <div className="text-3xl md:text-4xl grayscale group-hover:grayscale-0 transition-all duration-500 bg-white/5 p-3 rounded-2xl flex items-center justify-center overflow-hidden w-14 h-14 md:w-16 md:h-16">
@@ -132,10 +158,10 @@ export default function Skills() {
                                         <h3 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-violet-400 transition-colors uppercase tracking-tight">{skill.name}</h3>
                                     </motion.div>
                                 ))}
-                            </div>
-                        </div>
+                            </motion.div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
                 <div className="flex flex-col items-center gap-6 md:gap-8 mt-24 md:mt-32">
                     <p className="text-gray-500 font-medium text-lg md:text-xl">Want to discuss a project?</p>

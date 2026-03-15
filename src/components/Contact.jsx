@@ -28,8 +28,8 @@ export default function Contact() {
                     {/* Left Column: Intro & Meta */}
                     <motion.div
                         className="lg:w-[40%] flex flex-col justify-between"
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                     >
@@ -51,17 +51,40 @@ export default function Contact() {
                             </p>
                         </div>
 
-                        <div className="space-y-12">
+                        <motion.div 
+                            className="space-y-12"
+                            variants={{
+                                hidden: { opacity: 0 },
+                                show: {
+                                    opacity: 1,
+                                    transition: {
+                                        staggerChildren: 0.2
+                                    }
+                                }
+                            }}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                        >
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-10">
-                                <div className="group/item cursor-pointer">
+                                <motion.div 
+                                    className="group/item cursor-pointer"
+                                    variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+                                >
                                     <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3 group-hover/item:text-violet-400 transition-colors">PRIMARY CHANNEL</p>
                                     <p className="text-xl font-bold text-gray-200 transition-all group-hover/item:translate-x-2 underline decoration-white/10 underline-offset-8">abishekkc923@gmail.com</p>
-                                </div>
-                                <div className="group/item cursor-pointer">
+                                </motion.div>
+                                <motion.div 
+                                    className="group/item cursor-pointer"
+                                    variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
+                                >
                                     <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3 group-hover/item:text-violet-400 transition-colors">SECURE LINE</p>
                                     <p className="text-xl font-bold text-gray-200 transition-all group-hover/item:translate-x-2 underline decoration-white/10 underline-offset-8">9047943317</p>
-                                </div>
-                                <div className="pt-6">
+                                </motion.div>
+                                <motion.div 
+                                    className="pt-6"
+                                    variants={{ hidden: { opacity: 0, scale: 0.95 }, show: { opacity: 1, scale: 1 } }}
+                                >
                                     <a 
                                         href={resumeFile} 
                                         download="Professional Resume (2).pdf" 
@@ -71,20 +94,20 @@ export default function Contact() {
                                         <FaFileDownload className="text-violet-500 text-xl relative z-10" />
                                         <span className="text-[12px] font-black uppercase tracking-[0.2em] text-gray-200 relative z-10">Download Resume</span>
                                     </a>
-                                </div>
+                                </motion.div>
                             </div>
-                        </div>
+                        </motion.div>
                     </motion.div>
 
                     {/* Right Column: Interactive Form */}
                     <motion.div
                         className="lg:w-[60%] relative"
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
                     >
-                        <div className="relative glass-dark p-8 md:p-16 rounded-[40px] border border-white/5 group/card overflow-hidden h-full flex flex-col justify-center">
+                        <div className="relative glass-dark p-8 md:p-16 rounded-[40px] border border-white/5 group/card overflow-hidden h-full flex flex-col justify-center transition-all duration-700 hover:-translate-y-4">
                             {/* Card Shimmer Effect */}
                             <div className="absolute inset-0 bg-gradient-to-tr from-violet-600/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-1000"></div>
                             

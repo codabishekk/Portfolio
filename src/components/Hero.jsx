@@ -11,15 +11,25 @@ export default function Hero() {
             <div className="container flex flex-col md:flex-row items-center justify-between gap-16 md:gap-20 z-10 relative">
                 <motion.div
                     className="flex-[1.2] text-center md:text-left order-2 md:order-1"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        show: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.15,
+                                ease: [0.16, 1, 0.3, 1]
+                            }
+                        }
+                    }}
+                    initial="hidden"
+                    animate="show"
                 >
                     <motion.div
                         className="inline-flex items-center gap-3 px-4 py-2 glass-light rounded-full mb-8"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.3, duration: 0.8 }}
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            show: { opacity: 1, y: 0 }
+                        }}
                     >
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
@@ -30,9 +40,11 @@ export default function Hero() {
 
                     <motion.h1 
                         className="text-6xl sm:text-7xl md:text-9xl lg:text-[120px] font-extrabold mb-8 leading-[0.9] tracking-tight"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                        variants={{
+                            hidden: { opacity: 0, y: 30 },
+                            show: { opacity: 1, y: 0 }
+                        }}
+                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     >
                         Crafting <br />
                         <span className="text-gradient text-glow">Digital</span> <br />
@@ -41,18 +53,20 @@ export default function Hero() {
 
                     <motion.p 
                         className="text-gray-400 text-xl md:text-2xl max-w-2xl mx-auto md:mx-0 mb-12 leading-relaxed font-medium"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6, duration: 1 }}
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            show: { opacity: 1, y: 0 }
+                        }}
                     >
                         I am a full-stack engineer and designer specialized in creating premium, high-performance web applications that make an impact.
                     </motion.p>
 
                     <motion.div 
                         className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 mt-12 mb-5"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8, duration: 1 }}
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            show: { opacity: 1, y: 0 }
+                        }}
                     >
                         <a href="/#projects" className="px-10 md:px-12 py-5 md:py-6 bg-foreground text-background font-bold rounded-2xl hover:bg-violet-500 hover:text-white transition-all duration-500 premium-shadow text-base md:text-lg hover:-translate-y-1">
                             SELECTED WORKS

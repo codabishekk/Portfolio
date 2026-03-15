@@ -103,15 +103,30 @@ export default function Archive() {
                     <p className="text-gray-400 max-w-xl text-lg md:text-xl font-medium leading-relaxed">A comprehensive list of every digital creation and experiment.</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+                <motion.div 
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10"
+                    variants={{
+                        hidden: { opacity: 0 },
+                        show: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.1
+                            }
+                        }
+                    }}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                >
                     {allProjects.map((project, index) => (
                         <motion.div
                             key={project.title}
                             className="group relative glass rounded-[30px] md:rounded-[40px] overflow-hidden transition-all duration-700 hover:-translate-y-4"
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                            variants={{
+                                hidden: { opacity: 0, y: 30 },
+                                show: { opacity: 1, y: 0 }
+                            }}
+                            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         >
                             <div className="h-48 md:h-64 bg-violet-500/5 flex items-center justify-center group-hover:bg-violet-500/10 transition-all duration-700 overflow-hidden">
                                 {project.image ? (
@@ -159,7 +174,7 @@ export default function Archive() {
                             <div className="absolute inset-0 bg-gradient-to-t from-violet-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
                 <div className="flex justify-center mt-12 md:mt-20">
                     <Link to="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8 group text-lg font-medium">
                         <span className="group-hover:-translate-x-1 transition-transform">←</span> Back to Home
