@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaFileDownload } from "react-icons/fa";
-import resumeFile from "../assets/Professional Resume (2).pdf";
+import resumeFile from "../assets/Examination.docx";
 
 export default function Contact() {
     return (
