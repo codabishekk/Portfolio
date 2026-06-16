@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import heroBg from "../assets/hero-new.jpg";
+import resumeFile from "../assets/resume.pdf";
+
 
 export default function Hero() {
     return (
@@ -73,6 +75,16 @@ export default function Hero() {
                         </a>
                         <a href="/#contact" className="px-10 md:px-12 py-5 md:py-6 glass hover:bg-white/[0.08] text-white font-bold rounded-2xl transition-all duration-500 text-base md:text-lg hover:-translate-y-1">
                             GET IN TOUCH
+                        </a>
+                        <a 
+                            href={resumeFile} 
+                            download="Abishek_C_Resume.pdf"
+                            className="px-10 md:px-12 py-5 md:py-6 border border-violet-500/50 text-violet-400 font-bold rounded-2xl hover:bg-violet-500 hover:text-white transition-all duration-500 text-base md:text-lg hover:-translate-y-1 flex items-center gap-3"
+                        >
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            RESUME
                         </a>
                     </motion.div>
                 </motion.div>

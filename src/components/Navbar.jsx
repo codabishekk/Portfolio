@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import resumeFile from "../assets/resume.pdf";
+import { HiOutlineDownload } from "react-icons/hi";
+
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -58,6 +61,19 @@ export default function Navbar() {
                         <span className="absolute -bottom-1.5 left-0 w-0 h-[2px] bg-violet-500 transition-all duration-500 group-hover:w-full"></span>
                     </motion.a>
                 ))}
+                
+                <motion.a
+                    href={resumeFile}
+                    download="Abishek_C_Resume.pdf"
+                    variants={{
+                        hidden: { opacity: 0, y: -10 },
+                        show: { opacity: 1, y: 0 }
+                    }}
+                    className="ml-4 px-6 py-2 bg-violet-600 hover:bg-violet-500 text-white rounded-full transition-all duration-300 flex items-center gap-2 premium-shadow"
+                >
+                    <HiOutlineDownload className="text-lg" />
+                    RESUME
+                </motion.a>
             </motion.div>
 
             {/* Mobile Menu Toggle */}
@@ -114,6 +130,20 @@ export default function Navbar() {
                                     {item}
                                 </motion.a>
                             ))}
+
+                            <motion.a
+                                href={resumeFile}
+                                download="Abishek_C_Resume.pdf"
+                                variants={{
+                                    hidden: { opacity: 0, y: 20 },
+                                    show: { opacity: 1, y: 0 }
+                                }}
+                                className="mt-4 flex items-center gap-4 px-10 py-5 bg-violet-600 text-white rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                <HiOutlineDownload className="text-2xl" />
+                                Resume
+                            </motion.a>
                         </motion.div>
                     </motion.div>
                 )}
