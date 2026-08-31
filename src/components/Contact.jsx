@@ -1,185 +1,212 @@
-import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaFileDownload } from "react-icons/fa";
+import { useLayoutEffect, useRef } from "react";
+import { gsap, prefersReducedMotion } from "../animations/gsap";
+import Magnetic from "./Magnetic";
 import resumeFile from "../assets/resume.pdf";
+import { ArrowRight, ArrowUpRight, Mail, Phone } from "lucide-react";
+import { GitHubIcon, LinkedInIcon } from "./BrandIcons";
+import { profile } from "../data/profile";
+
+const LINKS = [
+  {
+    label: "Email",
+    href: `mailto:${profile.email}`,
+    icon: Mail,
+    cursor: "EMAIL",
+  },
+  {
+    label: "LinkedIn",
+    href: profile.linkedin,
+    icon: LinkedInIcon,
+    cursor: "OPEN",
+  },
+  {
+    label: "GitHub",
+    href: profile.github,
+    icon: GitHubIcon,
+    cursor: "OPEN",
+  },
+  {
+    label: "Phone",
+    href: `tel:${profile.phone}`,
+    icon: Phone,
+    cursor: "CALL",
+  },
+];
 
 export default function Contact() {
-    return (
-        <section id="contact" className="relative py-20 md:py-40 bg-black overflow-hidden group/session">
-            {/* Background Decorative Elements */}
-            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-                <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-violet-600/10 blur-[120px] rounded-full animate-pulse"></div>
-                <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-indigo-600/10 blur-[100px] rounded-full delay-1000"></div>
-            </div>
+  const sectionRef = useRef(null);
+  const reduce = prefersReducedMotion();
 
-            {/* Horizontal Side Text 
-            <div className="absolute left-4 top-1/2 -translate-y-1/2 hidden xl:block">
-                <p className="text-[10px] font-black uppercase tracking-[1em] text-gray-800 vertical-text origin-center -rotate-90 whitespace-nowrap">
-                    DISPATCH / SYSTEM 2.0
-                </p>
-            </div> */}
-            <div className="absolute right-4 top-1/2 -translate-y-1/2 hidden xl:block">
-                <p className="text-[10px] font-black uppercase tracking-[1em] text-gray-800 vertical-text origin-center rotate-90 whitespace-nowrap">
-                    EST. 2026 / ABISHEK.C
-                </p>
-            </div>
+  useLayoutEffect(() => {
+    if (reduce) return undefined;
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".contact-headline .line-mask > span",
+        { yPercent: 112 },
+        {
+          yPercent: 0,
+          duration: 1.2,
+          stagger: 0.14,
+          ease: "expo.out",
+          scrollTrigger: { trigger: ".contact-headline", start: "top 80%" },
+        }
+      );
 
-            <div className="container max-w-7xl relative z-10">
-                <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-stretch">
-                    {/* Left Column: Intro & Meta */}
-                    <motion.div
-                        className="lg:w-[40%] flex flex-col justify-between"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                        <div>
-                            <div className="mb-12 flex items-center gap-4">
-                                <span className="h-[1px] w-12 bg-violet-500"></span>
-                                <span className="text-[11px] font-bold uppercase tracking-[0.4em] text-violet-500/80">Electronic Dispatch</span>
-                            </div>
+      gsap.fromTo(
+        ".contact-sub > *",
+        { y: 26, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.12,
+          ease: "power3.out",
+          scrollTrigger: { trigger: ".contact-sub", start: "top 82%" },
+        }
+      );
 
-                            <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black mb-10 leading-[0.85] tracking-tighter">
-                                Let's <br />
-                                <span className="text-gradient text-glow">Craft</span> <br />
-                                Future.
-                            </h2>
+      gsap.fromTo(
+        ".contact-pill",
+        { scale: 0.85, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1.2,
+          ease: "expo.out",
+          scrollTrigger: { trigger: ".contact-pill", start: "top 88%" },
+        }
+      );
 
-                            <p className="text-gray-400 text-lg md:text-xl mb-16 font-medium leading-relaxed max-w-md border-l-2 border-white/5 pl-8 ml-2">
-                                Curating high-performance digital architectures for a hyper-connected world.
-                                Currently open for selective engineering partnerships.
-                            </p>
-                        </div>
+      gsap.fromTo(
+        ".contact-links [data-reveal]",
+        { y: 24, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          stagger: 0.08,
+          ease: "power3.out",
+          scrollTrigger: { trigger: ".contact-links", start: "top 85%" },
+        }
+      );
 
-                        <motion.div
-                            className="space-y-12"
-                            variants={{
-                                hidden: { opacity: 0 },
-                                show: {
-                                    opacity: 1,
-                                    transition: {
-                                        staggerChildren: 0.2
-                                    }
-                                }
-                            }}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                        >
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-10">
-                                <motion.div
-                                    className="group/item cursor-pointer"
-                                    variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
-                                >
-                                    <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3 group-hover/item:text-violet-400 transition-colors">PRIMARY CHANNEL</p>
-                                    <p className="text-xl font-bold text-gray-200 transition-all group-hover/item:translate-x-2 underline decoration-white/10 underline-offset-8">abishekkc923@gmail.com</p>
-                                </motion.div>
-                                <motion.div
-                                    className="group/item cursor-pointer"
-                                    variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}
-                                >
-                                    <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-3 group-hover/item:text-violet-400 transition-colors">SECURE LINE</p>
-                                    <p className="text-xl font-bold text-gray-200 transition-all group-hover/item:translate-x-2 underline decoration-white/10 underline-offset-8">9047943317</p>
-                                </motion.div>
-                                <motion.div
-                                    className="pt-6"
-                                    variants={{ hidden: { opacity: 0, scale: 0.95 }, show: { opacity: 1, scale: 1 } }}
-                                >
-                                    <a
-                                        href={resumeFile}
-                                        download="Professional Resume (2).pdf"
-                                        className="group/resume relative inline-flex items-center gap-4 px-8 py-4 bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-violet-500/50 transition-all duration-500"
-                                    >
-                                        <div className="absolute inset-0 bg-gradient-to-r from-violet-600/20 to-indigo-600/20 translate-x-[-100%] group-hover/resume:translate-x-0 transition-transform duration-500"></div>
-                                        <FaFileDownload className="text-violet-500 text-xl relative z-10" />
-                                        <span className="text-[12px] font-black uppercase tracking-[0.2em] text-gray-200 relative z-10">Download Resume</span>
-                                    </a>
-                                </motion.div>
-                            </div>
-                        </motion.div>
-                    </motion.div>
+      gsap.fromTo(
+        ".contact-ghost",
+        { yPercent: 30 },
+        {
+          yPercent: -10,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
+    }, sectionRef);
+    return () => ctx.revert();
+  }, [reduce]);
 
-                    {/* Right Column: Interactive Form */}
-                    <motion.div
-                        className="lg:w-[60%] relative"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                    >
-                        <div className="relative glass-dark p-8 md:p-16 rounded-[40px] border border-white/5 group/card overflow-hidden h-full flex flex-col justify-center transition-all duration-700 hover:-translate-y-4">
-                            {/* Card Shimmer Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-violet-600/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-1000"></div>
+  return (
+    <section id="contact" ref={sectionRef} className="relative overflow-hidden py-28 md:py-44">
+      <span
+        className="contact-ghost pointer-events-none absolute -left-4 top-10 select-none font-anton text-[34vw] leading-none text-white-highlight/[0.02]"
+        aria-hidden="true"
+      >
+        06
+      </span>
 
-                            <form className="relative z-10 grid gap-10">
-                                <div className="relative group/field">
-                                    <input type="text" id="name" name="name" className="peer w-full bg-transparent border-b-2 border-white/10 py-4 outline-none focus:border-violet-500 transition-all font-bold text-2xl text-white placeholder-transparent" placeholder="Name" />
-                                    <label htmlFor="name" className="absolute left-0 top-4 text-gray-500 font-bold uppercase tracking-widest text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-active:top-[-20px] peer-active:text-[10px] peer-active:text-violet-400 peer-focus:top-[-20px] peer-focus:text-[10px] peer-focus:text-violet-400 pointer-events-none">Full Identity</label>
-                                </div>
+      {/* vertical side text */}
+      <p className="editorial-label vertical-rl pointer-events-none absolute right-6 top-1/2 hidden -translate-y-1/2 opacity-70 xl:block">
+        EST. 2026 / ABISHEKK.C
+      </p>
 
-                                <div className="relative group/field">
-                                    <input type="email" id="email" name="email" className="peer w-full bg-transparent border-b-2 border-white/10 py-4 outline-none focus:border-violet-500 transition-all font-bold text-2xl text-white placeholder-transparent" placeholder="Email" />
-                                    <label htmlFor="email" className="absolute left-0 top-4 text-gray-500 font-bold uppercase tracking-widest text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-active:top-[-20px] peer-active:text-[10px] peer-active:text-violet-400 peer-focus:top-[-20px] peer-focus:text-[10px] peer-focus:text-violet-400 pointer-events-none">Secure Dispatch</label>
-                                </div>
+      <div className="container relative z-10">
+        <div className="mb-8 flex items-center gap-6 md:mb-14">
+          <span className="font-anton text-sm tracking-[0.25em] text-electric-green">06</span>
+          <span className="hairline w-16" />
+          <span className="editorial-label">Contact</span>
+        </div>
 
-                                <div className="relative group/field">
-                                    <textarea id="message" name="message" rows="3" className="peer w-full bg-transparent border-b-2 border-white/10 py-4 outline-none focus:border-violet-500 transition-all font-bold text-2xl text-white placeholder-transparent resize-none" placeholder="Message"></textarea>
-                                    <label htmlFor="message" className="absolute left-0 top-4 text-gray-500 font-bold uppercase tracking-widest text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-active:top-[-20px] peer-active:text-[10px] peer-active:text-violet-400 peer-focus:top-[-20px] peer-focus:text-[10px] peer-focus:text-violet-400 pointer-events-none">The Vision</label>
-                                </div>
+        {/* Headline */}
+        <h2 className="contact-headline font-anton uppercase leading-[1.02] text-white-highlight">
+          <span className="line-mask block">
+            <span className="block text-[13vw] leading-[1] md:text-[9vw]">
+              Have a project
+            </span>
+          </span>
+          <span className="line-mask block">
+            <span className="block text-[13vw] leading-[1] md:text-[9vw]">
+              in <span className="text-electric-green">mind?</span>
+            </span>
+          </span>
+        </h2>
 
-                                <motion.button
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="group/btn relative w-full py-8 bg-white text-black font-black rounded-2xl overflow-hidden premium-shadow"
-                                >
-                                    <span className="relative z-10 flex items-center justify-center gap-4 text-[14px] uppercase tracking-[0.3em]">
-                                        Initialize Brief
-                                        <span className="group-hover/btn:translate-x-2 transition-transform">→</span>
-                                    </span>
-                                    <div className="absolute inset-0 bg-violet-600 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
-                                    <span className="absolute inset-0 z-20 flex items-center justify-center gap-4 text-[14px] uppercase tracking-[0.3em] text-white opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500">
-                                        Initialize Brief
-                                        <span>→</span>
-                                    </span>
-                                </motion.button>
-                            </form>
-                        </div>
-                    </motion.div>
-                </div>
+        {/* Sub copy */}
+        <div className="contact-sub mt-10 max-w-xl md:mt-14">
+          <p className="font-anton text-xl uppercase tracking-[0.08em] text-white-highlight md:text-2xl">
+            Let's build something meaningful.
+          </p>
+          <p className="mt-5 text-base leading-relaxed text-muted-text md:text-lg">
+            Curating high-performance digital architectures for a hyper-connected world.
+            Currently open for selective engineering partnerships.
+          </p>
+        </div>
 
-                {/* Refined Footer */}
-                <div className="mt-40 pt-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10">
-                    <div className="flex gap-12 text-[10px] font-black uppercase tracking-[0.4em] text-gray-600">
-                        <a href="/#home" className="hover:text-white transition-colors">Home</a>
-                        <a href="/#about" className="hover:text-white transition-colors">Catalog</a>
-                        <a href="/#projects" className="hover:text-white transition-colors">Manifesto</a>
-                    </div>
+        {/* Pill CTA */}
+        <div className="contact-pill relative z-20 mt-14 md:mt-20">
+          <Magnetic strength={0.4}>
+            <a
+              href={`mailto:${profile.email}?subject=Project%20Opportunity`}
+              data-cursor-label="SEND"
+              className="group inline-flex items-center gap-6 rounded-full border border-border-subtle bg-surface-elevated py-6 pl-10 pr-6 transition-colors duration-700 hover:bg-electric-green md:py-8 md:pl-14 md:pr-8"
+            >
+              <span className="font-anton text-xl uppercase tracking-[0.12em] text-white-highlight transition-colors duration-700 group-hover:text-cta-text-on-green md:text-3xl">
+                Get in touch
+              </span>
+              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-electric-green text-electric-green transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-45 group-hover:border-cta-text-on-green group-hover:bg-cta-text-on-green group-hover:text-electric-green md:h-16 md:w-16">
+                <ArrowRight className="size-5 md:size-7" />
+              </span>
+            </a>
+          </Magnetic>
+        </div>
 
-                    <div className="flex gap-10">
-                        {[
-                            { icon: FaEnvelope, href: "mailto:abishekkc923@gmail.com" },
-                            { icon: FaPhone, href: "tel:9047943317" },
-                            { icon: FaLinkedin, href: "https://www.linkedin.com/in/abishekk-c-5457b4227" },
-                            { icon: FaGithub, href: "https://github.com/codabishekk" }
-                        ].map((item, i) => (
-                            <motion.a
-                                key={i}
-                                href={item.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-gray-500 hover:text-violet-500 transition-colors text-2xl"
-                                whileHover={{ y: -5, scale: 1.2 }}
-                            >
-                                <item.icon />
-                            </motion.a>
-                        ))}
-                    </div>
+        {/* Links */}
+        <div className="contact-links mt-20 grid grid-cols-1 gap-x-10 gap-y-8 border-t border-border-faint pt-10 sm:grid-cols-2 md:mt-28 lg:grid-cols-4">
+          {LINKS.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel="noopener noreferrer"
+              data-cursor-label={link.cursor}
+              data-reveal
+              className="group flex items-center justify-between border-b border-border-faint pb-4 font-anton text-sm uppercase tracking-[0.25em] text-muted-text transition-colors duration-500 hover:border-electric-green hover:text-electric-green"
+            >
+              <span className="flex items-center gap-3">
+                <link.icon className="size-4" />
+                {link.label}
+              </span>
+              <ArrowUpRight className="size-4 -translate-x-2 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100" />
+            </a>
+          ))}
+        </div>
 
-                    <p className="text-[10px] font-black text-gray-700 uppercase tracking-[0.4em]">© 2026 ABISHEK.C — ALL RIGHTS RESERVED</p>
-                </div>
-            </div>
-        </section>
-    );
+        {/* Resume download */}
+        <div className="contact-resume mt-12 md:mt-16">
+          <a
+            href={resumeFile}
+            download="Abishek_C_Resume.pdf"
+            data-cursor-label="SAVE"
+            data-reveal
+            className="group inline-flex items-baseline gap-3 font-anton text-sm uppercase tracking-[0.25em] text-muted-text transition-colors duration-500 hover:text-electric-green"
+          >
+            <span className="h-px w-10 bg-border-subtle transition-colors duration-500 group-hover:bg-electric-green" />
+            Download Resume (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+  );
 }
-
-
