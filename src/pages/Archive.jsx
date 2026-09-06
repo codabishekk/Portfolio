@@ -11,10 +11,20 @@ import nxt_trends from "../assets/nxt_trends.png";
 import Checklist from "../assets/todo_list.png";
 import Restaurant from "../assets/restaurant_app.png";
 import plannerImg from "../assets/planer.png";
+import Aitutor from "../assets/AI-tutor.png";
 
 const allProjects = [
   {
     index: "01",
+    title: "AI-tutor",
+    description: "A high-performance of learning from youtube videos with help of LLMs models.",
+    tech: ["React", "Django", "Python", "Langgraph", "GenAi", "RAG", "LLMs"],
+    category: "Learning",
+    image: Aitutor,
+    link: "https://transcript-ai-tutor.vercel.app/",
+  },
+  {
+    index: "02",
     title: "EVENT-MANGEMENT",
     description: "A high-performance MERN architecture designed for massive scale of small business, man resource, part-time work platform for seamless communication.",
     tech: ["React", "Express", "MongoDB", "Node.js"],
@@ -23,7 +33,7 @@ const allProjects = [
     link: "https://event-management-1-rs9y.onrender.com",
   },
   {
-    index: "02",
+    index: "03",
     title: "job_portal",
     description: "Developed a Job Portal application using React that enables users to browse jobs, submit applications, and track their application status efficiently.",
     tech: ["HTML5", "React", "CSS3", "javascript", "restAPI", ""],
@@ -32,7 +42,7 @@ const allProjects = [
     link: "https://enhancement-of-jobby-app-peach.vercel.app",
   },
   {
-    index: "03",
+    index: "04",
     title: "tic tac toe",
     description: "Advanced AI-powered game logic with move prediction and minimax algorithm implementation in a sleek responsive layout.",
     tech: ["React", "Tailwind CSS", "Algorithm"],
@@ -41,7 +51,7 @@ const allProjects = [
     link: "https://tic-tac-tai.netlify.app",
   },
   {
-    index: "04",
+    index: "05",
     title: "dm-delay",
     description: "DM-Delay is a React-based web application designed to manage, track, and visualize delay-related data through an interactive and user-friendly dashboard.",
     tech: ["React", "CSS3", "Logic Engine"],
@@ -50,7 +60,7 @@ const allProjects = [
     link: "https://dm-delay.netlify.app",
   },
   {
-    index: "05",
+    index: "06",
     title: "mood mailing",
     description: "Sentiment analysis tool for email communication that suggests improvements based on detected tone and emotional impact.",
     tech: ["NLP", "React", "Sentiment API"],
@@ -59,7 +69,7 @@ const allProjects = [
     link: "https://mood-mailing.netlify.app",
   },
   {
-    index: "06",
+    index: "07",
     title: "checkList",
     description: "A simple and responsive task management application built with React for managing everyday activities.",
     tech: ["HTML5", "React", "CSS3", "usestate"],
@@ -68,7 +78,7 @@ const allProjects = [
     link: "https://simple-todo-n6hg.vercel.app",
   },
   {
-    index: "07",
+    index: "08",
     title: "Restaurant_app",
     description: "A premium dining platform featuring dynamic menu selection, real-time table reservations, and seamless order management.",
     tech: ["HTML5", "React", "CSS3", "javascript", "restAPI", ""],
@@ -77,7 +87,7 @@ const allProjects = [
     link: "https://enhancement-restaurant-app-7gni.vercel.app",
   },
   {
-    index: "08",
+    index: "09",
     title: "E-commerce",
     description: "Real-time interactive shopping platform featuring secure checkouts, inventory management, and adaptive UI animations.",
     tech: ["React", "Redux", "Node.js", "Stripe"],
@@ -86,7 +96,7 @@ const allProjects = [
     link: "https://glazzium.netlify.app",
   },
   {
-    index: "09",
+    index: "10",
     title: "planner visualizing",
     description: "A visual task orchestration system that maps project timelines into interactive 3D graphs for better workflow insight.",
     tech: ["Three.js", "React", "D3.js"],

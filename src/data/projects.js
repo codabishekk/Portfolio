@@ -1,6 +1,7 @@
 import event from "../assets/event_management.png";
 import ticTacToeImg from "../assets/tic tac toe.png";
-import job from "../assets/job_app.png";
+import Aitutor from "../assets/AI-tutor.png";
+
 
 export const projects = [
   {
@@ -11,17 +12,17 @@ export const projects = [
     tech: ["React", "Express", "MongoDB", "JavaScript"],
     image: event,
     link: "https://event-management-1-rs9y.onrender.com",
-    github: "https://github.com/codabishekk",
+    github: "https://github.com/codabishekk/Event-management",
   },
   {
     index: "02",
-    title: "JOB PORTAL",
+    title: "AI-tutor",
     description:
-      "Developed a Job Portal application using React that enables users to browse jobs, submit applications, and track their application status efficiently.",
-    tech: ["HTML5", "React", "CSS3", "JavaScript", "REST API"],
-    image: job,
-    link: "https://enhancement-of-jobby-app-peach.vercel.app",
-    github: "https://github.com/codabishekk",
+      "A high-performance of learning from youtube videos with help of LLMs models.",
+    tech: ["React", "Django", "Python", "Langgraph", "GenAi", "RAG", "LLMs"],
+    image: Aitutor,
+    link: "https://transcript-ai-tutor.vercel.app/",
+    github: "https://github.com/codabishekk/transcript_AI_tutor",
   },
   {
     index: "03",
@@ -31,6 +32,6 @@ export const projects = [
     tech: ["React (Vite)", "Tailwind CSS", "Claude", "OpenRouter API"],
     image: ticTacToeImg,
     link: "https://tic-tac-tai.netlify.app",
-    github: "https://github.com/codabishekk",
+    github: "https://github.com/codabishekk/Tic_Tac_Tai",
   },
 ];
