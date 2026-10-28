@@ -93,7 +93,7 @@ const allProjects = [
     tech: ["React", "Redux", "Node.js", "Stripe"],
     image: nxt_trends,
     category: "Fintech",
-    link: "https://glazzium.netlify.app",
+    link: "https://ecommerce-website-mu-virid.vercel.app/",
   },
   {
     index: "10",
